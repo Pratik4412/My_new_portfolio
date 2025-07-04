@@ -1,14 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
-import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import "../style/HeroSection.css";
-import heroImage from "../assets/main-bg.webp";
-import sky from "../assets/Vector (2).png";
 import MyPhoto from "../assets/myPhoto.png";
 import Vector from "../assets/Vector (3).png";
 import { TypeAnimation } from "react-type-animation";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
-import BlogVideo from "@/components/blogVideo";
+import BlogVideo from "@/components/BlogVideo";
 import HeroSection from "@/components/HeroSection";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Contack from "@/components/Contack";
