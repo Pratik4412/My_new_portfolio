@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Contact_img from "../assets/contack_bg_img.webp";
 const Contack = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -69,97 +69,100 @@ const Contack = () => {
     }
   };
   return (
-    <section className="container mx-auto lg:py-11 md:py-6 py-4 lg:px-11 md:px-6 px-4  flex items-center justify-center bg-gray-500">
-      <div className="max-w-4xl flex flex-col md:gap-10 gap-8">
+    <section className="container mx-auto flex items-center justify-center w-full h-full ">
+      <div className="max-w-4xl flex flex-col md:gap-10 gap-4">
         <div className="flex flex-col items-start gap-4">
-          <h1 className="text-2xl text-white md:text-3xl font-heading font-semibold ">
+          <h1 className="text-2xl text-black md:text-3xl font-heading font-semibold ">
             Contact Me
           </h1>
-          <p className="text-sm text-white font-paragraph font-medium ">
+          <p className="text-sm text-black font-paragraph font-medium ">
             I'm a Full Stack MERN Developer & Freelance Web Expert helping
             businesses build fast, scalable, and beautiful web solutions.
             Whether you need a landing page, a custom web app, or want to
             collaborate on a project — feel free to drop a message!
           </p>
         </div>
-        <form className="bg-white py-6 px-4 rounded-2xl">
-          <div className="flex items-start flex-col md:flex-row gap-4 w-full">
-            <div className="flex flex-col gap-4 w-full">
-              <div className="flex flex-col md:gap-2 gap-1">
-                <label
-                  htmlFor="name"
-                  className="md:text-base text-sm font-heading font-semibold "
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  required
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="enter your name "
-                  className="py-2 px-3 outline-none bg-gray-200 rounded-sm md:text-base text-sm text-black font-heading"
-                />
-              </div>
-              <div className="flex flex-col md:gap-2 gap-1">
-                <label
-                  htmlFor="email"
-                  className="md:text-base text-sm font-heading font-semibold"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="enter your email"
-                  className="py-2 px-3 outline-none bg-gray-200 rounded-sm md:text-base text-sm text-black font-heading"
-                />
-              </div>
-              <div className="flex flex-col md:gap-2 gap-1">
-                <label
-                  htmlFor="phone"
-                  className="md:text-base text-sm font-heading font-semibold "
-                >
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  required
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  maxLength={10}
-                  pattern="[0-9]{10}"
-                  placeholder="enter your phone number "
-                  className="py-2 px-3 outline-none bg-gray-200 rounded-sm md:text-base text-sm text-black font-heading"
-                />
-              </div>
+        <form className="rounded-2xl">
+          <div className="flex items-start flex-col md:flex-row gap-8 w-full">
+            <div className="hidden md:block">
+              <img src={Contact_img} alt="" className="rounded-xl " />
             </div>
-            <div className="flex flex-col justify-between h-full gap-4 w-full">
-              <div className="flex flex-col md:gap-2 gap-1">
-                {" "}
-                <label
-                  htmlFor="textarea"
-                  className="md:text-base text-sm font-heading font-semibold "
-                >
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="textarea"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Your Message"
-                  className="resize-none md:h-40 h-20 py-2 px-3 outline-none bg-gray-200 rounded-sm md:text-base text-sm text-black font-heading"
-                  required
-                ></textarea>
+            <div className="flex flex-col justify-between gap-4 md:gap-8 w-full h-full">
+              <div className="flex flex-col gap-4 w-full">
+                <div className="flex flex-col md:gap-2 gap-1">
+                  <label
+                    htmlFor="name"
+                    className="md:text-base text-sm font-heading font-semibold "
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="enter your name "
+                    className="py-2 px-3 border border-blue-100 outline-none bg-gray-50 rounded-sm md:text-base text-sm text-black font-heading"
+                  />
+                </div>
+                <div className="flex flex-col md:gap-2 gap-1">
+                  <label
+                    htmlFor="email"
+                    className="md:text-base text-sm font-heading font-semibold"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="enter your email"
+                    className="py-2 px-3 outline-none border border-blue-100 bg-gray-50 rounded-sm md:text-base text-sm text-black font-heading"
+                  />
+                </div>
+                <div className="flex flex-col md:gap-2 gap-1">
+                  <label
+                    htmlFor="phone"
+                    className="md:text-base text-sm font-heading font-semibold "
+                  >
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    maxLength={10}
+                    pattern="[0-9]{10}"
+                    placeholder="enter your phone number "
+                    className="py-2 px-3 outline-none border border-blue-100 bg-gray-50 rounded-sm md:text-base text-sm text-black font-heading"
+                  />
+                </div>
+                <div className="flex flex-col md:gap-2 gap-1">
+                  {" "}
+                  <label
+                    htmlFor="textarea"
+                    className="md:text-base text-sm font-heading font-semibold "
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    id="textarea"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Your Message"
+                    className="resize-none md:h-40 h-20 py-2 border border-blue-100 px-3 outline-none bg-gray-50 rounded-sm md:text-base text-sm text-black font-heading"
+                    required
+                  ></textarea>
+                </div>
               </div>
               <div className="flex items-center justify-end">
                 <button

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  ChevronDown,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
   const [currentTech, setCurrentTech] = useState(0);
@@ -34,6 +32,18 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const navItems = [
+    { name: "View My Work", id: "portfolio" },
+    { name: "Get In Touch", id: "GetInTouch" },
+  ];
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
       {/* Animated Background Grid */}
@@ -128,17 +138,19 @@ const HeroSection = () => {
                 : "translate-y-8 opacity-0"
             }`}
           >
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-              View My Work
-            </button>
-            <button className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300">
-              Get In Touch
-            </button>
-          </div>
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                {item.name}
+              </button>
+            ))}</div>
         </div>
       </div>
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-[47%] transform -translate-x-1/2 text-white/60 animate-bounce">
+      <div className="absolute bottom-8 left-[50%] transform -translate-x-1/2 text-white/60 animate-bounce">
         <ChevronDown size={32} />
       </div>
       <style jsx>{`

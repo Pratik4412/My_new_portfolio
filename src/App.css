@@ -27,6 +27,13 @@ html {
   --footer-background-color_two: #bcbcbc18;
 }
 
+/* .contack_bg_imge {
+  background-image: url(../src/assets/contack_bg_img.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+
 .heading {
   font-size: 38px;
   line-height: 45.6px;

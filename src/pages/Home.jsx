@@ -9,6 +9,7 @@ import BlogVideo from "@/components/BlogVideo";
 import HeroSection from "@/components/HeroSection";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Contack from "@/components/Contack";
+import Footer from "@/components/Footer";
 const Home = () => {
   const words = `I actively work on personal and client-based web projects to continuously enhance my skills and contribute to impactful digital solutions.
 `;
@@ -160,7 +161,7 @@ const Home = () => {
           </a>
         </div>
       </section>
-      <section className="py-4 md:py-6 lg:py-10 px-4 md:px-6 lg:10   bg-gray-800">
+      <section className="px-5" id="GetInTouch">
         <Contack />
       </section>
     </div>
